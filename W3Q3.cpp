@@ -9,10 +9,9 @@ using namespace std;
 
 const int INFINITE_SOLUTIONS = 0;
 const int ZERO_SOLUTIONS = 1;
-const int LINEAR_EQUATION = 2;
-const int TWO_REAL_SOLUTIONS = 3;
-const int ONE_SOLUTION = 4;
-const int NO_REAL_SOLUTIONS = 5;
+const int TWO_REAL_SOLUTIONS = 2;
+const int ONE_SOLUTION = 3;
+const int NO_REAL_SOLUTIONS = 4;
 
 int main() {
 
@@ -36,7 +35,7 @@ int main() {
     else if (a == 0 && b == 0 && c != 0)
         outputCode = ZERO_SOLUTIONS;
     else if (a == 0 && b != 0)
-        outputCode = LINEAR_EQUATION; 
+        outputCode = ONE_SOLUTION;
     else {
         //Calculate number of solutions using discriminant (b^2 - 4ac) of quadratic formula
         discriminantVal = (b * b) - (4 * a * c);
@@ -57,10 +56,6 @@ int main() {
             // case of "any non-zero number = 0"
             cout << "This equation has no solution" << endl;
             break;
-        case LINEAR_EQUATION:
-            // case for equation of form bx + c (i.e. b = line slope, - c / b = x-intercept)
-            cout << "This equation is linear and has one real solution x=" << -c / b << endl;
-            break;
         case TWO_REAL_SOLUTIONS:
             // case for discriminantVal > 0
             firstSolution = (-b + sqrt(discriminantVal)) / (2 * a); // quadratic formula
@@ -69,10 +64,16 @@ int main() {
                  << secondSolution << endl;
             break;
         case ONE_SOLUTION:
+            // case for linear equation of form f(x) = bx + c (i.e. b = line slope, - c / b = x-intercept)
+            if (a == 0){
+                cout << "This equation has one real solution x=" << -c / b << endl;
+            }
             // case for discriminantVal = 0
-            firstSolution = (-b + 0) / (2 * a); // + 0 added to avoid output x = -0
-            cout << "This equation has one repeated real number solution x="
-                 << firstSolution << endl;
+            else {
+                firstSolution = (-b + 0) / (2 * a); // + 0 added to avoid output x = -0
+                cout << "This equation has one repeated real solution x="
+                     << firstSolution << endl;
+            }
             break;
         case NO_REAL_SOLUTIONS:
             // case for discriminantVal < 0
