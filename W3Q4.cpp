@@ -32,7 +32,7 @@ int main() {
     //Round according to user's menu choice
     switch (menuChoice){
         case FLOOR_ROUND:
-            // Either number is positive (prints int value as is), or number is negative and already rounded
+            // Either number is positive, or number is negative and already rounded
             if (!isNegative || (isNegative && (inputReal - inputInteger == 0)))
                 outputVal = inputInteger;
             // Else number is negative and not rounded
