@@ -74,9 +74,12 @@ int main() {
             cout << "This equation has one repeated real number solution x="
                  << firstSolution << endl;
             break;
-        default:
+        case NO_REAL_SOLUTIONS:
             // case for discriminantVal < 0
             cout << "This equation has no real solutions" << endl;
+            break;
+        default:
+            cout << "Error: Invalid input" << endl;
             break;
     }
 
