@@ -51,7 +51,7 @@ int main() {
             // When number is positive and fractional part greater than or equal to 0.5, round up
             if (!isNegative && (inputReal - inputInteger >= 0.5))
                 outputVal = inputInteger + 1;
-            // When number is negative and fractional part is less than -0.5, then subtract 1 from int
+            // When number is negative and fractional part is less than or equal to -0.5, then subtract 1 from int
             else if (isNegative && (inputReal - inputInteger <= -0.5))
                 outputVal = inputInteger -1;
             /* When number is already rounded OR when number is negative and fractional part is greater
