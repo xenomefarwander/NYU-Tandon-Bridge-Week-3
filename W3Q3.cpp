@@ -58,7 +58,7 @@ int main() {
             cout << "This equation has no solution" << endl;
             break;
         case LINEAR_EQUATION:
-            // case for equation of form bx + c (i.e. b = line slope, - c / b = y-intercept)
+            // case for equation of form bx + c (i.e. b = line slope, - c / b = x-intercept)
             cout << "This equation is linear and has one real solution x=" << -c / b << endl;
             break;
         case TWO_REAL_SOLUTIONS:
