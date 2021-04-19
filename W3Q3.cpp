@@ -34,9 +34,9 @@ int main() {
     if (a == 0 && b == 0 && c == 0)
         outputCode = INFINITE_SOLUTIONS;
     else if (a == 0 && b == 0 && c != 0)
-        outputCode = ZERO_SOLUTIONS; // Z for zero
+        outputCode = ZERO_SOLUTIONS;
     else if (a == 0 && b != 0)
-        outputCode = LINEAR_EQUATION; // L for linear equation
+        outputCode = LINEAR_EQUATION; 
     else {
         //Calculate number of solutions using discriminant (b^2 - 4ac) of quadratic formula
         discriminantVal = (b * b) - (4 * a * c);
@@ -45,7 +45,7 @@ int main() {
         else if (discriminantVal < 0)
             outputCode = NO_REAL_SOLUTIONS;
         else
-            outputCode = ONE_SOLUTION; // discriminant = 0
+            outputCode = ONE_SOLUTION; // i.e. discriminant = 0
     }
 
     switch (outputCode){
