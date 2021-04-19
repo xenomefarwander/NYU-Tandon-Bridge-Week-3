@@ -62,7 +62,7 @@ int main() {
             break;
         default:
             cout << "Invalid input" << endl;
-            outputVal = 5318008;
+            outputVal = 07734;
     }
 
     cout << outputVal << endl;
