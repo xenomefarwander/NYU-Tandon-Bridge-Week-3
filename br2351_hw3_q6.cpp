@@ -20,10 +20,14 @@ int main() {
     cout << "Please enter call duration in minutes: ";
     cin >> callDuration;
 
-    if (startHours >= 8 && startHours < 18 && startDay != "Sa" && startDay != "Su")
-        amountBilled = callDuration * STD_RATE;
-    else if ((startHours < 8 || startHours >= 18) && startDay != "Sa" && startDay != "Su")
-        amountBilled = callDuration * EVENING_RATE;
+    if (startDay != "Sa" && startDay != "Su"){
+        if (startHours >= 8 && startHours < 18)
+            amountBilled = callDuration * STD_RATE;
+        else if (startHours == 18 && startMinutes == 0)
+            amountBilled = callDuration * STD_RATE;
+        else 
+            amountBilled = callDuration * EVENING_RATE;
+    }
     else
         amountBilled = callDuration * WEEKEND_RATE;
 
